@@ -93,7 +93,7 @@ async function request(req, max_tokens = 300) {
 async function translateRequest(req, max_tokens = 50) {
     
     const { name, language } = req
-    conversationMessages = [{role:"user", content: `Translate the following sentence into ${language}: "Hey ${name ? name : 'bud'}! My name's Gorg! I'm your personal chat buddy, how are you?"`}]
+    conversationMessages = [{role:"user", content: `Translate the following sentence into ${language}, but do not include the quotes: "Hey ${name ? name : 'bud'}! My name's Gorg! I'm your personal chat buddy, how are you?"`}]
     const systemPrompt = `You are a strict translator and only reply with the exact translation of the sentence provided, to the language provided.`;
     conversationMessages.unshift({ role: "system", content: systemPrompt });
   
