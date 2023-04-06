@@ -183,7 +183,7 @@ app.post("/api", (req, res) => {
 });
 
 
-app.post("/api-translate", (req, res) => {
+app.post("/api/translate", (req, res) => {
     
     translateRequest(req.body, 50)
         .then((result) => {
@@ -196,7 +196,7 @@ app.post("/api-translate", (req, res) => {
         });
   });
 
-  app.get("/api-translate", (req, res) => {
+  app.get("/api/translate", (req, res) => {
     
     let request = { language: req.query.language, name: req.query.name}
     
